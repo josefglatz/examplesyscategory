@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-10-21T19:19:39Z" product-name="examplesyscategory">
+		<header/>
+		<body>
+
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="bodytext.description">
+				<source>bodytext</source>
+			</trans-unit>
+			<trans-unit id="places.description">
+				<source>places</source>
+			</trans-unit>
+			<trans-unit id="color.description">
+				<source>color</source>
+			</trans-unit>
+			<trans-unit id="categories.description">
+				<source>categories</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

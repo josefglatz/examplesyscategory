@@ -1,0 +1,14 @@
+plugin.tx_examplesyscategory {
+	view {
+		# cat=plugin.tx_examplesyscategory/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:examplesyscategory/Resources/Private/Templates/
+		# cat=plugin.tx_examplesyscategory/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:examplesyscategory/Resources/Private/Partials/
+		# cat=plugin.tx_examplesyscategory/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:examplesyscategory/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_examplesyscategory//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

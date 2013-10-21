@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-10-21T19:19:39Z" product-name="examplesyscategory">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_examplesyscategory_domain_model_item">
+				<source>Item</source>
+			</trans-unit>
+			<trans-unit id="tx_examplesyscategory_domain_model_item.title">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="tx_examplesyscategory_domain_model_item.bodytext">
+				<source>bodytext</source>
+			</trans-unit>
+			<trans-unit id="tx_examplesyscategory_domain_model_item.places">
+				<source>places</source>
+			</trans-unit>
+			<trans-unit id="tx_examplesyscategory_domain_model_item.color">
+				<source>color</source>
+			</trans-unit>
+			<trans-unit id="tx_examplesyscategory_domain_model_item.categories">
+				<source>categories</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_examplesyscategory_domain_model_place">
+				<source>Place</source>
+			</trans-unit>
+			<trans-unit id="tx_examplesyscategory_domain_model_place.title">
+				<source>title</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_examplesyscategory_domain_model_color">
+				<source>Color</source>
+			</trans-unit>
+			<trans-unit id="tx_examplesyscategory_domain_model_color.title">
+				<source>title</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>
