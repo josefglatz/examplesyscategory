@@ -13,27 +13,18 @@ plugin.tx_examplesyscategory {
 	}
 }
 
-plugin.tx_examplesyscategory._CSS_DEFAULT_STYLE (
-	textarea.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
+#
+# Mapping of sys_category and its properties
+#
 
-	input.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
+config.extbase.persistence.classes {
+	Tx_Examplesyscategory_Domain_Model_Category {
+		mapping {
+			tableName = sys_category
+			columns {
+				title.mapOnProperty = title
+				description.mapOnProperty = description
+			}
+		}
 	}
-
-	.tx-examplesyscategory table {
-		border-collapse:separate;
-		border-spacing:10px;
-	}
-
-	.tx-examplesyscategory table th {
-		font-weight:bold;
-	}
-
-	.tx-examplesyscategory table td {
-		vertical-align:top;
-	}
-)
+}
