@@ -9,6 +9,16 @@ if (!defined('TYPO3_MODE')) {
 	'Sys Category Sample Plugin'
 );
 
+
+$extensionName = t3lib_div::underscoredToUpperCamelCase($_EXTKEY);
+$pluginSignature = strtolower($extensionName) . '_pi1';
+
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'layout,recursive,select_key,pages';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+t3lib_extMgm::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_pi1.xml');
+
+
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Example sys_category');
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_examplesyscategory_domain_model_item', 'EXT:examplesyscategory/Resources/Private/Language/locallang_csh_tx_examplesyscategory_domain_model_item.xlf');
