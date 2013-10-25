@@ -4,7 +4,7 @@ namespace J18\Examplesyscategory\Domain\Repository;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 
+ *  (c) 2013
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,6 +23,8 @@ namespace J18\Examplesyscategory\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use J18\Examplesyscategory\Domain\Model\Dto\Demand;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  *
@@ -33,5 +35,49 @@ namespace J18\Examplesyscategory\Domain\Repository;
  */
 class ItemRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
+	public function findByDemand(Demand $demand) {
+		$query = $this->createQuery();
+		$query->getQuerySettings()->setRespectStoragePage(FALSE);
+		$constraints = array();
+
+		// storage page
+		if ($demand->getStartingpoint() != '') {
+			$pidList = GeneralUtility::intExplode(',', $demand->getStartingpoint(), TRUE);
+			$constraints[] = $query->in('pid', $pidList);
+		}
+
+		// categories
+		if ($demand->getCategories() != '') {
+			$categoryConstraints = array();
+			$categoryList = GeneralUtility::intExplode(',', $demand->getCategories(), TRUE);
+			foreach ($categoryList as $category) {
+				$categoryConstraints[] = $query->contains('categories', $category);
+			}
+
+			if (!empty($categoryConstraints)) {
+				$mode = strtolower($demand->getCategoryMode());
+				switch ($mode) {
+					case 'and':
+						$constraints[] = $query->logicalAnd($categoryConstraints);
+						break;
+					case 'or':
+						$constraints[] = $query->logicalOr($categoryConstraints);
+						break;
+					default:
+						throw new \UnexpectedValueException('Set a category mode');
+				}
+			}
+		}
+
+		if (!empty($constraints)) {
+			$query->matching(
+				$query->logicalAnd($constraints)
+			);
+		}
+
+		return $query->execute();
+	}
+
 }
+
 ?>

@@ -1,4 +1,6 @@
 plugin.tx_examplesyscategory {
+	mvc.callDefaultActionIfActionCantBeResolved = 1
+
 	view {
 		templateRootPath = {$plugin.tx_examplesyscategory.view.templateRootPath}
 		partialRootPath = {$plugin.tx_examplesyscategory.view.partialRootPath}
