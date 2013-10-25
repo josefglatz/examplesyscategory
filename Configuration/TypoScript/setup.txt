@@ -17,8 +17,8 @@ plugin.tx_examplesyscategory {
 # Mapping of sys_category and its properties
 #
 
-config.extbase.persistence.classes {
-	Tx_Examplesyscategory_Domain_Model_Category {
+config.tx_extbase.persistence.classes {
+	J18\Examplesyscategory\Domain\Model\Category {
 		mapping {
 			tableName = sys_category
 			columns {

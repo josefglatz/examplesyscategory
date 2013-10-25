@@ -8,12 +8,10 @@ if (!defined('TYPO3_MODE')) {
 	'Pi1',
 	array(
 		'Item' => 'list, show',
-		
+		'Category' => 'list',
 	),
-	// non-cacheable actions
 	array(
 		'Item' => '',
-		
 	)
 );
 
