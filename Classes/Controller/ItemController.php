@@ -64,7 +64,7 @@ class ItemController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 * @param \J18\Examplesyscategory\Domain\Model\Item $item
 	 * @return void
 	 */
-	public function showAction(\J18\Examplesyscategory\Domain\Model\Item $item) {
+	public function showAction(\J18\Examplesyscategory\Domain\Model\Item $item = NULL) {
 		$this->view->assign('item', $item);
 	}
 
