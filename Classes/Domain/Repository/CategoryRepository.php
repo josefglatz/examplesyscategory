@@ -23,6 +23,7 @@ namespace J18\Examplesyscategory\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  *
@@ -33,6 +34,15 @@ namespace J18\Examplesyscategory\Domain\Repository;
  */
 class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRepository {
 
+	public function findByUidList($idList) {
+		$query = $this->createQuery();
+		$query->getQuerySettings()->setRespectStoragePage(FALSE);
+
+		return $query->matching(
+			$query->logicalAnd(
+				$query->in('uid', GeneralUtility::intExplode(',', $idList))
+			))->execute();
+	}
 }
 
 ?>

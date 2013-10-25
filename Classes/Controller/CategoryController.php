@@ -47,7 +47,7 @@ class CategoryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 	 * @return void
 	 */
 	public function listAction() {
-		$categories = $this->categoryRepository->findAll();
+		$categories = $this->categoryRepository->findByUidList($this->settings['categories']);
 		$this->view->assign('categories', $categories);
 	}
 

@@ -1,13 +1,15 @@
 <f:if condition="{categories}">
 	<f:then>
 		<table class="table">
-		<f:for each="{categories}" as="category">
-			<tr>
-				<td>{category.uid}</td>
-				<td>{category.title}</td>
-				<td>link</td>
-			</tr>
-		</f:for>
+			<f:for each="{categories}" as="category">
+				<tr>
+					<td>{category.uid}</td>
+					<td>{category.title}</td>
+					<td>
+						<f:link.action action="list" controller="item" arguments="{category:category}">link</f:link.action>
+					</td>
+				</tr>
+			</f:for>
 		</table>
 	</f:then>
 	<f:else>no categories here</f:else>
