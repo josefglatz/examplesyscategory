@@ -56,6 +56,7 @@ class ItemController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 		}
 		$items = $this->itemRepository->findByDemand($demand);
 		$this->view->assign('items', $items);
+		$this->view->assign('category', $category);
 	}
 
 	/**
